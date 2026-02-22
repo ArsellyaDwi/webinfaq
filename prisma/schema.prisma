@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  username  String   @id
+  name      String
+  password  String
+  major     String
+  batch     String
+  phone     String?
+  role      String   @default("user")
+  avatar    String?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("users")
+}
+
+model Donation {
+  id         String   @id
+  name       String
+  batch      String
+  major      String
+  amount     Decimal
+  date       String
+  proofImage String?  @map("proof_image")
+  username   String?
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@map("donations")
+}
+
+model Activity {
+  id          String   @id
+  title       String
+  imageUrl    String   @map("image_url")
+  date        String
+  description String
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("activities")
+}
+
+model QrisConfig {
+  nominal   Int      @id
+  imageUrl  String   @map("image_url")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("qris_configs")
+}

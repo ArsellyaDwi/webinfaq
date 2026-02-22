@@ -158,7 +158,7 @@ const ClientApp: React.FC<ClientAppProps> = ({ initialActivities, initialDonatio
     if ('error' in result) {
       alert(result.error);
     } else {
-      setUser(result);
+      setUser(result as any);
       setProfileForm({ 
         username: result.username || '',
         name: result.name, 
@@ -207,7 +207,7 @@ const ClientApp: React.FC<ClientAppProps> = ({ initialActivities, initialDonatio
       alert('Anda tidak memiliki akses admin!');
       await actions.logoutUser();
     } else {
-      setUser(result);
+      setUser(result as any);
       setProfileForm({ 
         username: result.username || '',
         name: result.name, 

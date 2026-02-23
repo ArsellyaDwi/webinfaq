@@ -2739,6 +2739,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
     const [selectedActivity, setSelectedActivity] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [selectedProof, setSelectedProof] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [showPasswords, setShowPasswords] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
+    const [customAmount, setCustomAmount] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const togglePassword = (id)=>{
         setShowPasswords((prev)=>({
                 ...prev,
@@ -6064,6 +6065,78 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                             fileName: "[project]/app/ClientApp.tsx",
                                             lineNumber: 920,
                                             columnNumber: 19
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-3",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-xs font-bold text-slate-400 uppercase tracking-widest",
+                                                    children: "Atau masukkan nominal sendiri"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/ClientApp.tsx",
+                                                    lineNumber: 926,
+                                                    columnNumber: 21
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "relative",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-lg",
+                                                            children: "Rp"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/ClientApp.tsx",
+                                                            lineNumber: 928,
+                                                            columnNumber: 23
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                            id: "custom-amount-input",
+                                                            type: "number",
+                                                            placeholder: "Masukkan nominal",
+                                                            className: "w-full pl-14 pr-4 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-emerald-500 outline-none font-bold text-lg",
+                                                            onKeyDown: (e)=>{
+                                                                if (e.key === 'Enter') {
+                                                                    const val = parseInt(e.target.value);
+                                                                    if (val >= 1000) {
+                                                                        setSelectedAmount(val);
+                                                                        setView('form');
+                                                                    }
+                                                                }
+                                                            }
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/ClientApp.tsx",
+                                                            lineNumber: 929,
+                                                            columnNumber: 23
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/app/ClientApp.tsx",
+                                                    lineNumber: 927,
+                                                    columnNumber: 21
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    onClick: ()=>{
+                                                        const input = document.getElementById('custom-amount-input');
+                                                        const val = parseInt(input.value);
+                                                        if (val >= 1000) {
+                                                            setSelectedAmount(val);
+                                                            setView('form');
+                                                        } else {
+                                                            alert('Minimal donasi Rp1.000');
+                                                        }
+                                                    },
+                                                    className: "w-full py-4 bg-emerald-600 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-emerald-700 transition-all shadow-lg",
+                                                    children: "Donasi Sekarang"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/ClientApp.tsx",
+                                                    lineNumber: 945,
+                                                    columnNumber: 21
+                                                }, ("TURBOPACK compile-time value", void 0))
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/ClientApp.tsx",
+                                            lineNumber: 925,
+                                            columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
@@ -6078,7 +6151,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IconShield"], {}, void 0, false, {
                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                    lineNumber: 929,
+                                                    lineNumber: 966,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -6086,13 +6159,13 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                     children: "ADMIN CONSOLE"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                    lineNumber: 929,
+                                                    lineNumber: 966,
                                                     columnNumber: 35
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 928,
+                                            lineNumber: 965,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -6107,13 +6180,13 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                     size: 16
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                    lineNumber: 931,
+                                                    lineNumber: 968,
                                                     columnNumber: 309
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 931,
+                                            lineNumber: 968,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -6125,13 +6198,13 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                     size: 16
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                    lineNumber: 932,
+                                                    lineNumber: 969,
                                                     columnNumber: 282
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 932,
+                                            lineNumber: 969,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6142,7 +6215,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                     children: "Upload QRIS Per Nominal"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                    lineNumber: 935,
+                                                    lineNumber: 972,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6181,7 +6254,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                     }
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                                    lineNumber: 939,
+                                                                    lineNumber: 976,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -6193,7 +6266,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                             children: opt.label
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/ClientApp.tsx",
-                                                                            lineNumber: 966,
+                                                                            lineNumber: 1003,
                                                                             columnNumber: 29
                                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -6201,30 +6274,30 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                             children: qrisConfigs.find((c)=>c.nominal === opt.value) ? 'TERPASANG' : 'UPLOAD'
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/ClientApp.tsx",
-                                                                            lineNumber: 967,
+                                                                            lineNumber: 1004,
                                                                             columnNumber: 29
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                                    lineNumber: 962,
+                                                                    lineNumber: 999,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, opt.id, true, {
                                                             fileName: "[project]/app/ClientApp.tsx",
-                                                            lineNumber: 938,
+                                                            lineNumber: 975,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)))
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                    lineNumber: 936,
+                                                    lineNumber: 973,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 934,
+                                            lineNumber: 971,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6235,7 +6308,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                     children: "Rekap User Terdaftar"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                    lineNumber: 975,
+                                                    lineNumber: 1012,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6248,7 +6321,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                     children: u.name
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                                    lineNumber: 979,
+                                                                    lineNumber: 1016,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6261,7 +6334,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/ClientApp.tsx",
-                                                                            lineNumber: 981,
+                                                                            lineNumber: 1018,
                                                                             columnNumber: 29
                                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -6271,42 +6344,42 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/ClientApp.tsx",
-                                                                            lineNumber: 982,
+                                                                            lineNumber: 1019,
                                                                             columnNumber: 29
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                                    lineNumber: 980,
+                                                                    lineNumber: 1017,
                                                                     columnNumber: 27
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             ]
                                                         }, u.username, true, {
                                                             fileName: "[project]/app/ClientApp.tsx",
-                                                            lineNumber: 978,
+                                                            lineNumber: 1015,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)))
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                    lineNumber: 976,
+                                                    lineNumber: 1013,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 974,
+                                            lineNumber: 1011,
                                             columnNumber: 19
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/ClientApp.tsx",
-                                    lineNumber: 927,
+                                    lineNumber: 964,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/app/ClientApp.tsx",
                                 lineNumber: 913,
-                                columnNumber: 13
+                                columnNumber: 26
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
@@ -6337,12 +6410,12 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                     }
                 }, void 0, false, {
                     fileName: "[project]/app/ClientApp.tsx",
-                    lineNumber: 998,
+                    lineNumber: 1035,
                     columnNumber: 12
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/app/ClientApp.tsx",
-                lineNumber: 997,
+                lineNumber: 1034,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             view === 'payment' && donationData && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6356,14 +6429,14 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                 children: "←"
                             }, void 0, false, {
                                 fileName: "[project]/app/ClientApp.tsx",
-                                lineNumber: 1004,
+                                lineNumber: 1041,
                                 columnNumber: 245
                             }, ("TURBOPACK compile-time value", void 0)),
                             " Kembali"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/ClientApp.tsx",
-                        lineNumber: 1004,
+                        lineNumber: 1041,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6377,18 +6450,18 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                     children: "INFAQ"
                                 }, void 0, false, {
                                     fileName: "[project]/app/ClientApp.tsx",
-                                    lineNumber: 1008,
+                                    lineNumber: 1045,
                                     columnNumber: 26
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/ClientApp.tsx",
-                            lineNumber: 1007,
+                            lineNumber: 1044,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/app/ClientApp.tsx",
-                        lineNumber: 1006,
+                        lineNumber: 1043,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6399,7 +6472,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                 customImageUrl: qrisConfigs.find((c)=>c.nominal === donationData.amount)?.imageUrl
                             }, void 0, false, {
                                 fileName: "[project]/app/ClientApp.tsx",
-                                lineNumber: 1013,
+                                lineNumber: 1050,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6409,7 +6482,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                         className: "absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-full -mr-16 -mt-16 opacity-50 blur-2xl"
                                     }, void 0, false, {
                                         fileName: "[project]/app/ClientApp.tsx",
-                                        lineNumber: 1018,
+                                        lineNumber: 1055,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6426,7 +6499,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                 children: "Unggah Bukti Transfer"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                                lineNumber: 1023,
+                                                                lineNumber: 1060,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6434,13 +6507,13 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                 children: "Pastikan nominal dan waktu transaksi terlihat jelas"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                                lineNumber: 1024,
+                                                                lineNumber: 1061,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/ClientApp.tsx",
-                                                        lineNumber: 1022,
+                                                        lineNumber: 1059,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6460,7 +6533,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                 className: "absolute inset-0 opacity-0 cursor-pointer z-20"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                                lineNumber: 1028,
+                                                                lineNumber: 1065,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6472,12 +6545,12 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                             size: 24
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/ClientApp.tsx",
-                                                                            lineNumber: 1043,
+                                                                            lineNumber: 1080,
                                                                             columnNumber: 25
                                                                         }, ("TURBOPACK compile-time value", void 0))
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/ClientApp.tsx",
-                                                                        lineNumber: 1042,
+                                                                        lineNumber: 1079,
                                                                         columnNumber: 23
                                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6485,25 +6558,25 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                         children: tempProof ? 'GANTI FOTO BUKTI' : 'PILIH FOTO BUKTI'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/ClientApp.tsx",
-                                                                        lineNumber: 1045,
+                                                                        lineNumber: 1082,
                                                                         columnNumber: 23
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                                lineNumber: 1041,
+                                                                lineNumber: 1078,
                                                                 columnNumber: 21
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/ClientApp.tsx",
-                                                        lineNumber: 1027,
+                                                        lineNumber: 1064,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                lineNumber: 1021,
+                                                lineNumber: 1058,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             tempProof && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6518,7 +6591,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                 alt: "Proof Preview"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                                lineNumber: 1055,
+                                                                lineNumber: 1092,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6530,23 +6603,23 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                         size: 24
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/ClientApp.tsx",
-                                                                        lineNumber: 1058,
+                                                                        lineNumber: 1095,
                                                                         columnNumber: 27
                                                                     }, ("TURBOPACK compile-time value", void 0))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                                    lineNumber: 1057,
+                                                                    lineNumber: 1094,
                                                                     columnNumber: 25
                                                                 }, ("TURBOPACK compile-time value", void 0))
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                                lineNumber: 1056,
+                                                                lineNumber: 1093,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/ClientApp.tsx",
-                                                        lineNumber: 1054,
+                                                        lineNumber: 1091,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6556,7 +6629,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                 className: "w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                                lineNumber: 1063,
+                                                                lineNumber: 1100,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6564,25 +6637,25 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                 children: "Perhatikan: Pastikan bukti transfer sudah benar"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                                lineNumber: 1064,
+                                                                lineNumber: 1101,
                                                                 columnNumber: 23
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/ClientApp.tsx",
-                                                        lineNumber: 1062,
+                                                        lineNumber: 1099,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                lineNumber: 1053,
+                                                lineNumber: 1090,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/ClientApp.tsx",
-                                        lineNumber: 1020,
+                                        lineNumber: 1057,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6595,36 +6668,36 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                 "KONFIRMASI PEMBAYARAN ",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Icons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["IconCheckCircle"], {}, void 0, false, {
                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                    lineNumber: 1076,
+                                                    lineNumber: 1113,
                                                     columnNumber: 41
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 1071,
+                                            lineNumber: 1108,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/app/ClientApp.tsx",
-                                        lineNumber: 1070,
+                                        lineNumber: 1107,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/ClientApp.tsx",
-                                lineNumber: 1017,
+                                lineNumber: 1054,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/ClientApp.tsx",
-                        lineNumber: 1012,
+                        lineNumber: 1049,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/ClientApp.tsx",
-                lineNumber: 1003,
+                lineNumber: 1040,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             view === 'receipt' && donationData && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6637,12 +6710,12 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                     }
                 }, void 0, false, {
                     fileName: "[project]/app/ClientApp.tsx",
-                    lineNumber: 1086,
+                    lineNumber: 1123,
                     columnNumber: 12
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/app/ClientApp.tsx",
-                lineNumber: 1085,
+                lineNumber: 1122,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             view === 'gallery_upload' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6661,14 +6734,14 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                     children: "←"
                                 }, void 0, false, {
                                     fileName: "[project]/app/ClientApp.tsx",
-                                    lineNumber: 1094,
+                                    lineNumber: 1131,
                                     columnNumber: 238
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 " Kembali"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/ClientApp.tsx",
-                            lineNumber: 1094,
+                            lineNumber: 1131,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -6676,7 +6749,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                             children: editingActivity ? 'EDIT LAPORAN' : 'POST LAPORAN BARU'
                         }, void 0, false, {
                             fileName: "[project]/app/ClientApp.tsx",
-                            lineNumber: 1095,
+                            lineNumber: 1132,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -6691,7 +6764,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                             children: "JUDUL KEGIATAN"
                                         }, void 0, false, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 1098,
+                                            lineNumber: 1135,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -6702,13 +6775,13 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                             defaultValue: editingActivity?.title
                                         }, void 0, false, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 1099,
+                                            lineNumber: 1136,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/ClientApp.tsx",
-                                    lineNumber: 1097,
+                                    lineNumber: 1134,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6719,7 +6792,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                             children: "DESKRIPSI LENGKAP"
                                         }, void 0, false, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 1102,
+                                            lineNumber: 1139,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -6731,13 +6804,13 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                             defaultValue: editingActivity?.description
                                         }, void 0, false, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 1103,
+                                            lineNumber: 1140,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/ClientApp.tsx",
-                                    lineNumber: 1101,
+                                    lineNumber: 1138,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6748,7 +6821,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                             children: "UNGGAH FOTO KEGIATAN"
                                         }, void 0, false, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 1106,
+                                            lineNumber: 1143,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -6764,7 +6837,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                             className: "w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-[10px] file:font-black file:bg-emerald-50 file:text-emerald-700"
                                         }, void 0, false, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 1107,
+                                            lineNumber: 1144,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         tempActivityImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -6773,13 +6846,13 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                             alt: "preview"
                                         }, void 0, false, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 1108,
+                                            lineNumber: 1145,
                                             columnNumber: 39
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/ClientApp.tsx",
-                                    lineNumber: 1105,
+                                    lineNumber: 1142,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -6791,30 +6864,30 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                             size: 18
                                         }, void 0, false, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 1110,
+                                            lineNumber: 1147,
                                             columnNumber: 233
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/ClientApp.tsx",
-                                    lineNumber: 1110,
+                                    lineNumber: 1147,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/ClientApp.tsx",
-                            lineNumber: 1096,
+                            lineNumber: 1133,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/ClientApp.tsx",
-                    lineNumber: 1093,
+                    lineNumber: 1130,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/app/ClientApp.tsx",
-                lineNumber: 1092,
+                lineNumber: 1129,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             view === 'all_activities' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6828,14 +6901,14 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                 children: "←"
                             }, void 0, false, {
                                 fileName: "[project]/app/ClientApp.tsx",
-                                lineNumber: 1119,
+                                lineNumber: 1156,
                                 columnNumber: 230
                             }, ("TURBOPACK compile-time value", void 0)),
                             " Kembali"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/ClientApp.tsx",
-                        lineNumber: 1119,
+                        lineNumber: 1156,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6849,7 +6922,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                         children: "Semua Dokumentasi"
                                     }, void 0, false, {
                                         fileName: "[project]/app/ClientApp.tsx",
-                                        lineNumber: 1122,
+                                        lineNumber: 1159,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6857,13 +6930,13 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                         children: "Kegiatan HMIF ITN Malang"
                                     }, void 0, false, {
                                         fileName: "[project]/app/ClientApp.tsx",
-                                        lineNumber: 1123,
+                                        lineNumber: 1160,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/ClientApp.tsx",
-                                lineNumber: 1121,
+                                lineNumber: 1158,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6878,7 +6951,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                 alt: act.title
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                lineNumber: 1128,
+                                                lineNumber: 1165,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6889,7 +6962,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                         children: act.date
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/ClientApp.tsx",
-                                                        lineNumber: 1130,
+                                                        lineNumber: 1167,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -6897,36 +6970,36 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                         children: act.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/ClientApp.tsx",
-                                                        lineNumber: 1131,
+                                                        lineNumber: 1168,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                lineNumber: 1129,
+                                                lineNumber: 1166,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, act.id, true, {
                                         fileName: "[project]/app/ClientApp.tsx",
-                                        lineNumber: 1127,
+                                        lineNumber: 1164,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0)))
                             }, void 0, false, {
                                 fileName: "[project]/app/ClientApp.tsx",
-                                lineNumber: 1125,
+                                lineNumber: 1162,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/ClientApp.tsx",
-                        lineNumber: 1120,
+                        lineNumber: 1157,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/ClientApp.tsx",
-                lineNumber: 1118,
+                lineNumber: 1155,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             view === 'activity_detail' && selectedActivity && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6940,14 +7013,14 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                 children: "←"
                             }, void 0, false, {
                                 fileName: "[project]/app/ClientApp.tsx",
-                                lineNumber: 1143,
+                                lineNumber: 1180,
                                 columnNumber: 230
                             }, ("TURBOPACK compile-time value", void 0)),
                             " Kembali"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/ClientApp.tsx",
-                        lineNumber: 1143,
+                        lineNumber: 1180,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6961,12 +7034,12 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                     alt: selectedActivity.title
                                 }, void 0, false, {
                                     fileName: "[project]/app/ClientApp.tsx",
-                                    lineNumber: 1145,
+                                    lineNumber: 1182,
                                     columnNumber: 66
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/app/ClientApp.tsx",
-                                lineNumber: 1145,
+                                lineNumber: 1182,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6979,7 +7052,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                 size: 16
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                lineNumber: 1147,
+                                                lineNumber: 1184,
                                                 columnNumber: 119
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             " ",
@@ -6987,7 +7060,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/ClientApp.tsx",
-                                        lineNumber: 1147,
+                                        lineNumber: 1184,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -6995,14 +7068,14 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                         children: selectedActivity.title
                                     }, void 0, false, {
                                         fileName: "[project]/app/ClientApp.tsx",
-                                        lineNumber: 1148,
+                                        lineNumber: 1185,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "h-2 w-20 bg-emerald-500 rounded-full"
                                     }, void 0, false, {
                                         fileName: "[project]/app/ClientApp.tsx",
-                                        lineNumber: 1149,
+                                        lineNumber: 1186,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -7010,7 +7083,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                         children: selectedActivity.description
                                     }, void 0, false, {
                                         fileName: "[project]/app/ClientApp.tsx",
-                                        lineNumber: 1150,
+                                        lineNumber: 1187,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7025,12 +7098,12 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                             size: 24
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/ClientApp.tsx",
-                                                            lineNumber: 1153,
+                                                            lineNumber: 1190,
                                                             columnNumber: 119
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/ClientApp.tsx",
-                                                        lineNumber: 1153,
+                                                        lineNumber: 1190,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7040,7 +7113,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                 children: "Diterbitkan oleh"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                                lineNumber: 1154,
+                                                                lineNumber: 1191,
                                                                 columnNumber: 24
                                                             }, ("TURBOPACK compile-time value", void 0)),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -7048,19 +7121,19 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                                 children: "Panitia HATI HMIF ITN"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                                lineNumber: 1154,
+                                                                lineNumber: 1191,
                                                                 columnNumber: 123
                                                             }, ("TURBOPACK compile-time value", void 0))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/ClientApp.tsx",
-                                                        lineNumber: 1154,
+                                                        lineNumber: 1191,
                                                         columnNumber: 19
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                lineNumber: 1152,
+                                                lineNumber: 1189,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7073,43 +7146,43 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                             size: 16
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/ClientApp.tsx",
-                                                            lineNumber: 1157,
+                                                            lineNumber: 1194,
                                                             columnNumber: 244
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         " PRATINJAU PREMIUM"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                    lineNumber: 1157,
+                                                    lineNumber: 1194,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                lineNumber: 1156,
+                                                lineNumber: 1193,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/ClientApp.tsx",
-                                        lineNumber: 1151,
+                                        lineNumber: 1188,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/ClientApp.tsx",
-                                lineNumber: 1146,
+                                lineNumber: 1183,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/ClientApp.tsx",
-                        lineNumber: 1144,
+                        lineNumber: 1181,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/ClientApp.tsx",
-                lineNumber: 1142,
+                lineNumber: 1179,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             selectedProof && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7131,12 +7204,12 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                 size: 20
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ClientApp.tsx",
-                                                lineNumber: 1172,
+                                                lineNumber: 1209,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 1171,
+                                            lineNumber: 1208,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7146,7 +7219,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                     children: "Detail Bukti Transfer"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                    lineNumber: 1175,
+                                                    lineNumber: 1212,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -7154,19 +7227,19 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                                     children: "Gunakan scroll untuk melihat seluruh gambar"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/ClientApp.tsx",
-                                                    lineNumber: 1176,
+                                                    lineNumber: 1213,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/ClientApp.tsx",
-                                            lineNumber: 1174,
+                                            lineNumber: 1211,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/ClientApp.tsx",
-                                    lineNumber: 1170,
+                                    lineNumber: 1207,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -7176,18 +7249,18 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                         size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/app/ClientApp.tsx",
-                                        lineNumber: 1180,
+                                        lineNumber: 1217,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/app/ClientApp.tsx",
-                                    lineNumber: 1179,
+                                    lineNumber: 1216,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/ClientApp.tsx",
-                            lineNumber: 1169,
+                            lineNumber: 1206,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7200,17 +7273,17 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                     alt: "Bukti Transfer"
                                 }, void 0, false, {
                                     fileName: "[project]/app/ClientApp.tsx",
-                                    lineNumber: 1185,
+                                    lineNumber: 1222,
                                     columnNumber: 17
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/app/ClientApp.tsx",
-                                lineNumber: 1184,
+                                lineNumber: 1221,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/app/ClientApp.tsx",
-                            lineNumber: 1183,
+                            lineNumber: 1220,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7221,23 +7294,23 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                 children: "Tutup Pratinjau"
                             }, void 0, false, {
                                 fileName: "[project]/app/ClientApp.tsx",
-                                lineNumber: 1189,
+                                lineNumber: 1226,
                                 columnNumber: 15
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/app/ClientApp.tsx",
-                            lineNumber: 1188,
+                            lineNumber: 1225,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/ClientApp.tsx",
-                    lineNumber: 1168,
+                    lineNumber: 1205,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/app/ClientApp.tsx",
-                lineNumber: 1167,
+                lineNumber: 1204,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -7248,7 +7321,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                         children: "© 2026 HMIF ITN Malang • Program HATI"
                     }, void 0, false, {
                         fileName: "[project]/app/ClientApp.tsx",
-                        lineNumber: 1197,
+                        lineNumber: 1234,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -7259,19 +7332,19 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
                                 size: 12
                             }, void 0, false, {
                                 fileName: "[project]/app/ClientApp.tsx",
-                                lineNumber: 1198,
+                                lineNumber: 1235,
                                 columnNumber: 163
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/ClientApp.tsx",
-                        lineNumber: 1198,
+                        lineNumber: 1235,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/ClientApp.tsx",
-                lineNumber: 1196,
+                lineNumber: 1233,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
@@ -7281,7 +7354,7 @@ const ClientApp = ({ initialActivities, initialDonations })=>{
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(ClientApp, "dCKkOtb6A3lJnCYn2+I7NgEHau4=");
+_s(ClientApp, "6G+W+rumzhKlH80ywAITEnxGeIQ=");
 _c = ClientApp;
 const __TURBOPACK__default__export__ = ClientApp;
 var _c;

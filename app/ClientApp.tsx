@@ -64,7 +64,7 @@ const ClientApp: React.FC<ClientAppProps> = ({ initialActivities, initialDonatio
   const [selectedActivity, setSelectedActivity] = useState<Activity | null>(null);
   const [selectedProof, setSelectedProof] = useState<string | null>(null);
   const [showPasswords, setShowPasswords] = useState<Record<string, boolean>>({});
-
+  const [customAmount, setCustomAmount] = useState<number | ''>('');
   const togglePassword = (id: string) => {
     setShowPasswords(prev => ({ ...prev, [id]: !prev[id] }));
   };
@@ -910,7 +910,7 @@ const ClientApp: React.FC<ClientAppProps> = ({ initialActivities, initialDonatio
               </div>
             </div>
 
-            <div className="lg:col-span-4 space-y-8 lg:sticky lg:top-24 no-print">
+                         <div className="lg:col-span-4 space-y-8 lg:sticky lg:top-24 no-print">
               {!isAdmin ? (
                 <div className="bg-white p-8 rounded-[3rem] shadow-2xl border border-emerald-50 space-y-8">
                   <div className="space-y-1">
@@ -921,6 +921,43 @@ const ClientApp: React.FC<ClientAppProps> = ({ initialActivities, initialDonatio
                     {DONATION_OPTIONS.map((opt) => (
                       <DonasiButton key={opt.id} option={opt} onClick={(e, val) => { setSelectedAmount(val); setView('form'); triggerCoins(e); }} />
                     ))}
+                  </div>
+                  <div className="space-y-3">
+                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Atau masukkan nominal sendiri</p>
+                    <div className="relative">
+                      <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-lg">Rp</span>
+                      <input 
+                        id="custom-amount-input"
+                        type="number"
+                        placeholder="Masukkan nominal"
+                        className="w-full pl-14 pr-4 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-emerald-500 outline-none font-bold text-lg"
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            const val = parseInt((e.target as HTMLInputElement).value);
+                            if (val >= 1000) {
+                              setSelectedAmount(val);
+                              setView('form');
+                            }
+                          }
+                        }}
+                      />
+                    </div>
+                    <button 
+                      type="button"
+                      onClick={() => {
+                        const input = document.getElementById('custom-amount-input') as HTMLInputElement;
+                        const val = parseInt(input.value);
+                        if (val >= 1000) {
+                          setSelectedAmount(val);
+                          setView('form');
+                        } else {
+                          alert('Minimal donasi Rp1.000');
+                        }
+                      }}
+                      className="w-full py-4 bg-emerald-600 text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-emerald-700 transition-all shadow-lg"
+                    >
+                      Donasi Sekarang
+                    </button>
                   </div>
                 </div>
               ) : (

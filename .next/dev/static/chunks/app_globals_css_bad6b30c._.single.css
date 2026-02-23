@@ -574,6 +574,10 @@
     left: calc(var(--spacing) * 3);
   }
 
+  .left-5 {
+    left: calc(var(--spacing) * 5);
+  }
+
   .left-6 {
     left: calc(var(--spacing) * 6);
   }
@@ -1344,6 +1348,10 @@
 
   .border-slate-200 {
     border-color: var(--color-slate-200);
+  }
+
+  .border-slate-300 {
+    border-color: var(--color-slate-300);
   }
 
   .border-slate-700 {

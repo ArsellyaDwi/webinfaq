@@ -28,6 +28,7 @@ export interface DonationDetail {
   major: string;
   amount: number;
   date: string;
+  wishes: string;
   id: string;
   phone?: string;
   userId?: string;

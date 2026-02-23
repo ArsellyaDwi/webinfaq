@@ -801,6 +801,10 @@
     display: inline-flex;
   }
 
+  .table {
+    display: table;
+  }
+
   .aspect-\[9\/16\] {
     aspect-ratio: 9 / 16;
   }

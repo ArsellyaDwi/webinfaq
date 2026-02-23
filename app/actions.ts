@@ -242,6 +242,29 @@ export async function deleteDonation(id: string) {
   }
 }
 
+export async function updateDonation(donation: DonationDetail) {
+  try {
+    await prisma.donation.update({
+      where: { id: donation.id },
+      data: {
+        name: donation.name,
+        batch: donation.batch,
+        major: donation.major,
+        amount: donation.amount,
+        phone: donation.phone,
+        wishes: donation.wishes,
+        proofImage: donation.proofImage,
+      },
+    });
+
+    revalidatePath('/');
+    return { success: true };
+  } catch (error) {
+    console.error(error);
+    return { error: "Failed to update donation" };
+  }
+}
+
 /* ===================== ACTIVITY ===================== */
 
 export async function getActivities() {

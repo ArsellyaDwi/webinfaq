@@ -195,6 +195,21 @@
       "filename": "app/actions.ts",
       "exportedName": "deleteActivity"
     },
+    "40fd4a414e5b4f3d7c3d6753e3b9ce36b942459829": {
+      "workers": {
+        "app/page": {
+          "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateDonation",
+          "filename": "app/actions.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "filename": "app/actions.ts",
+      "exportedName": "updateDonation"
+    },
     "6036615657f9d927d553af8745a182bd05ab9b13a2": {
       "workers": {
         "app/page": {

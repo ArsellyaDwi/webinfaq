@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://neondb_owner:npg_M2tms@epipFRzu8-long-dew-ainutjic-pooler.c-4.us-east-1.aws.neon.tech/neondb?sslmode=require"
 }
 
 model User {
@@ -22,17 +22,18 @@ model User {
 }
 
 model Donation {
-  id         String   @id
-  name       String
-  batch      String
-  major      String
-  amount     Decimal
-  date       String
-  proofImage String?  @map("proof_image")
-  username   String?
-  createdAt  DateTime @default(now()) @map("created_at")
-
-  @@map("donations")
+  id          String   @id
+  name        String
+  batch       String
+  major       String
+  amount      Int
+  date        String
+  phone       String?
+  wishes      String?
+  proofImage  String?
+  username    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model Activity {

@@ -19,7 +19,7 @@ if ("TURBOPACK compile-time truthy", 1) globalForPrisma.prisma = prisma;
 "[project]/app/actions.ts [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-/* __next_internal_action_entry_do_not_use__ [{"00546e37a25b8e3fdc4234c41e6fc1f51230c6f58f":"getActivities","00753ee1a40e7ca15462a81b3fadb4b17cbac11e1b":"getCurrentUser","0090f21207c9e5fe55302cc0b1594e29954b3d5d63":"logoutUser","00a8af0684d3c91b2fc16584b3b30daf829155169f":"getDonations","00bd0fe7fb42ac2f0873cb886451c9fb452a893587":"getAdminUsers","00f59098c9cd08f8fd672a24dbbc65f877a0a79cb4":"getQrisConfigs","405f902b33105e52465a0f87b4cab5f19340ef091f":"saveActivity","40639a4f1dd254797db71d717b78964bff8315d84d":"updateUser","40b5031f443dffadabeaa696c698af8229d99a7d83":"loginUser","40c50d1481475997bbc57fc838d7750173938a3643":"saveDonation","40c75bc4b6473d438651e899980aea1138775d40a8":"deleteDonation","40dcda8f28518dd156cb53d6780c5cf53905b90068":"registerUser","40e81ac6e7dbd670900927018a9281a435b8795b0d":"deleteActivity","6036615657f9d927d553af8745a182bd05ab9b13a2":"changePassword","60b1b9a81eb9fd787de4b56e1b62f28d468249689c":"resetPassword","60dd26f3cc06dc7b976c80272ca1c9ebb6baba12d8":"saveQrisConfig"},"",""] */ __turbopack_context__.s([
+/* __next_internal_action_entry_do_not_use__ [{"00546e37a25b8e3fdc4234c41e6fc1f51230c6f58f":"getActivities","00753ee1a40e7ca15462a81b3fadb4b17cbac11e1b":"getCurrentUser","0090f21207c9e5fe55302cc0b1594e29954b3d5d63":"logoutUser","00a8af0684d3c91b2fc16584b3b30daf829155169f":"getDonations","00bd0fe7fb42ac2f0873cb886451c9fb452a893587":"getAdminUsers","00f59098c9cd08f8fd672a24dbbc65f877a0a79cb4":"getQrisConfigs","405f902b33105e52465a0f87b4cab5f19340ef091f":"saveActivity","40639a4f1dd254797db71d717b78964bff8315d84d":"updateUser","40b5031f443dffadabeaa696c698af8229d99a7d83":"loginUser","40c50d1481475997bbc57fc838d7750173938a3643":"saveDonation","40c75bc4b6473d438651e899980aea1138775d40a8":"deleteDonation","40dcda8f28518dd156cb53d6780c5cf53905b90068":"registerUser","40e81ac6e7dbd670900927018a9281a435b8795b0d":"deleteActivity","40fd4a414e5b4f3d7c3d6753e3b9ce36b942459829":"updateDonation","6036615657f9d927d553af8745a182bd05ab9b13a2":"changePassword","60b1b9a81eb9fd787de4b56e1b62f28d468249689c":"resetPassword","60dd26f3cc06dc7b976c80272ca1c9ebb6baba12d8":"saveQrisConfig"},"",""] */ __turbopack_context__.s([
     "changePassword",
     ()=>changePassword,
     "deleteActivity",
@@ -50,6 +50,8 @@ if ("TURBOPACK compile-time truthy", 1) globalForPrisma.prisma = prisma;
     ()=>saveDonation,
     "saveQrisConfig",
     ()=>saveQrisConfig,
+    "updateDonation",
+    ()=>updateDonation,
     "updateUser",
     ()=>updateUser
 ]);
@@ -330,6 +332,33 @@ async function deleteDonation(id) {
         };
     }
 }
+async function updateDonation(donation) {
+    try {
+        await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].donation.update({
+            where: {
+                id: donation.id
+            },
+            data: {
+                name: donation.name,
+                batch: donation.batch,
+                major: donation.major,
+                amount: donation.amount,
+                phone: donation.phone,
+                wishes: donation.wishes,
+                proofImage: donation.proofImage
+            }
+        });
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/');
+        return {
+            success: true
+        };
+    } catch (error) {
+        console.error(error);
+        return {
+            error: "Failed to update donation"
+        };
+    }
+}
 async function getActivities() {
     try {
         const activities = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].activity.findMany({
@@ -445,6 +474,7 @@ async function saveQrisConfig(nominal, imageUrl) {
     getDonations,
     saveDonation,
     deleteDonation,
+    updateDonation,
     getActivities,
     saveActivity,
     deleteActivity,
@@ -462,6 +492,7 @@ async function saveQrisConfig(nominal, imageUrl) {
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getDonations, "00a8af0684d3c91b2fc16584b3b30daf829155169f", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(saveDonation, "40c50d1481475997bbc57fc838d7750173938a3643", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteDonation, "40c75bc4b6473d438651e899980aea1138775d40a8", null);
+(0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(updateDonation, "40fd4a414e5b4f3d7c3d6753e3b9ce36b942459829", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(getActivities, "00546e37a25b8e3fdc4234c41e6fc1f51230c6f58f", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(saveActivity, "405f902b33105e52465a0f87b4cab5f19340ef091f", null);
 (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$next$2d$flight$2d$loader$2f$server$2d$reference$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerServerReference"])(deleteActivity, "40e81ac6e7dbd670900927018a9281a435b8795b0d", null);
@@ -473,6 +504,8 @@ async function saveQrisConfig(nominal, imageUrl) {
 
 __turbopack_context__.s([]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/actions.ts [app-rsc] (ecmascript)");
+;
+;
 ;
 ;
 ;
@@ -534,6 +567,8 @@ __turbopack_context__.s([
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["registerUser"],
     "40e81ac6e7dbd670900927018a9281a435b8795b0d",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["deleteActivity"],
+    "40fd4a414e5b4f3d7c3d6753e3b9ce36b942459829",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["updateDonation"],
     "6036615657f9d927d553af8745a182bd05ab9b13a2",
     ()=>__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$actions$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["changePassword"],
     "60b1b9a81eb9fd787de4b56e1b62f28d468249689c",

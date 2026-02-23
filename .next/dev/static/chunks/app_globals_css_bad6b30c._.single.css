@@ -94,6 +94,8 @@
     --color-emerald-600: #009767;
     --color-emerald-700: #007956;
     --color-emerald-900: #004e3b;
+    --color-blue-50: #eff6ff;
+    --color-blue-500: #3080ff;
     --color-slate-50: #f8fafc;
     --color-slate-100: #f1f5f9;
     --color-slate-200: #e2e8f0;
@@ -194,6 +196,8 @@
       --color-emerald-600: lab(55.0481% -49.9246 15.93);
       --color-emerald-700: lab(44.4871% -41.0396 11.0361);
       --color-emerald-900: lab(28.8637% -26.9249 5.45986);
+      --color-blue-50: lab(96.492% -1.14647 -5.11479);
+      --color-blue-500: lab(54.1736% 13.3368 -74.6839);
       --color-slate-50: lab(98.1434% -.369549 -1.05968);
       --color-slate-100: lab(96.286% -.852466 -2.46847);
       --color-slate-200: lab(91.7353% -.998765 -4.76968);
@@ -1496,6 +1500,16 @@
     background-color: var(--color-slate-900);
   }
 
+  .bg-slate-900\/80 {
+    background-color: #0f172bcc;
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-slate-900\/80 {
+      background-color: color-mix(in oklab, var(--color-slate-900) 80%, transparent);
+    }
+  }
+
   .bg-slate-900\/95 {
     background-color: #0f172bf2;
   }
@@ -2060,6 +2074,10 @@
     color: var(--color-amber-700);
   }
 
+  .text-blue-500 {
+    color: var(--color-blue-500);
+  }
+
   .text-emerald-100 {
     color: var(--color-emerald-100);
   }
@@ -2562,8 +2580,26 @@
   }
 
   @media (hover: hover) {
+    .hover\:bg-blue-50:hover {
+      background-color: var(--color-blue-50);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-blue-500:hover {
+      background-color: var(--color-blue-500);
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:bg-emerald-50:hover {
       background-color: var(--color-emerald-50);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-emerald-400:hover {
+      background-color: var(--color-emerald-400);
     }
   }
 
@@ -2606,6 +2642,12 @@
   @media (hover: hover) {
     .hover\:bg-slate-100:hover {
       background-color: var(--color-slate-100);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-slate-200:hover {
+      background-color: var(--color-slate-200);
     }
   }
 

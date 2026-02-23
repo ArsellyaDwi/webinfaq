@@ -20,7 +20,7 @@ export const DonationForm: React.FC<DonationFormProps> = ({ initialAmount, initi
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (name && batch && major && amount >= 0) {
-      onSubmit({ name, batch, major, amount, username: currentUser?.username });
+      onSubmit({ name, batch, major, amount, wishes: "", username: currentUser?.username });
     }
   };
 

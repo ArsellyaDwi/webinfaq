@@ -1001,46 +1001,60 @@ const ClientApp: React.FC<ClientAppProps> = ({ initialActivities, initialDonatio
                   <button onClick={() => { setEditingActivity(null); setView('gallery_upload'); }} className="w-full py-4 bg-emerald-500 text-white font-black rounded-2xl hover:bg-emerald-600 text-[10px] uppercase tracking-widest shadow-lg transition-all flex items-center justify-center gap-2">POST LAPORAN <IconCamera size={16} /></button>
                   <button onClick={() => exportToPDF(transactions)} className="w-full py-4 bg-white/5 text-white font-black rounded-2xl hover:bg-white/10 text-[10px] uppercase tracking-widest border border-white/10 transition-all flex items-center justify-center gap-2">EXPORT PDF <IconFileText size={16} /></button>
 
+                  {/* ==================== QRIS UTAMA (SEMUA NOMINAL) ==================== */}
                   <div className="pt-6 border-t border-white/10 space-y-4">
-                    <h5 className="text-[10px] font-black text-emerald-400 uppercase tracking-widest">Upload QRIS Per Nominal</h5>
-                    <div className="grid grid-cols-2 gap-2">
-                      {DONATION_OPTIONS.map(opt => (
-                        <div key={opt.id} className="relative group">
-                          <input
-                            type="file"
-                            id={`qris-${opt.value}`}
-                            className="hidden"
-                            onChange={async (e) => {
-                              const file = e.target.files?.[0];
-                              if (file) {
-                                const reader = new FileReader();
-                                reader.onloadend = async () => {
-                                  const base64 = reader.result as string;
-                                  const res = await actions.saveQrisConfig(opt.value, base64);
-                                  if (res.success) {
-                                    setQrisConfigs(prev => {
-                                      const filtered = prev.filter(c => c.nominal !== opt.value);
-                                      return [...filtered, { nominal: opt.value, imageUrl: base64, updatedAt: new Date() }];
-                                    });
-                                    showToast(`QRIS ${opt.label} diperbarui!`);
-                                  }
-                                };
-                                reader.readAsDataURL(file);
-                              }
+                    <h5 className="text-[10px] font-black text-emerald-400 uppercase tracking-widest">QRIS Utama</h5>
+                    <p className="text-[8px] text-slate-400">QRIS untuk semua nominal</p>
+
+                    <input
+                      type="file"
+                      id="admin-main-qris"
+                      className="hidden"
+                      accept="image/*"
+                      onChange={async (e) => {
+                        const file = e.target.files?.[0];
+                        if (file) {
+                          const reader = new FileReader();
+                          reader.onloadend = async () => {
+                            const base64 = reader.result as string;
+                            const res = await actions.saveQrisConfig(0, base64);
+                            if (res.success) {
+                              setQrisConfigs(prev => {
+                                const filtered = prev.filter(c => c.nominal !== 0);
+                                return [...filtered, { nominal: 0, imageUrl: base64, updatedAt: new Date() }];
+                              });
+                              showToast('QRIS utama berhasil diupload!');
+                            }
+                          };
+                          reader.readAsDataURL(file);
+                        }
+                      }}
+                    />
+                    <label
+                      htmlFor="admin-main-qris"
+                      className={`flex flex-col items-center justify-center p-8 rounded-xl border-2 border-dashed cursor-pointer transition-all ${qrisConfigs.find(c => c.nominal === 0 && c.imageUrl) ? 'border-emerald-500 bg-emerald-500/10' : 'border-white/20 bg-white/5 hover:border-emerald-500'}`}
+                    >
+                      {qrisConfigs.find(c => c.nominal === 0 && c.imageUrl) ? (
+                        <>
+                          <span className="text-[9px] font-black text-emerald-400">QRIS TERPASANG</span>
+                          <img
+                            src={qrisConfigs.find(c => c.nominal === 0)?.imageUrl || ''}
+                            alt="QRIS Utama"
+                            className="w-32 h-32 object-contain mt-2 rounded-lg"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).style.display = 'none';
                             }}
                           />
-                          <label
-                            htmlFor={`qris-${opt.value}`}
-                            className={`flex flex-col items-center justify-center p-3 rounded-xl border-2 border-dashed cursor-pointer transition-all ${qrisConfigs.find(c => c.nominal === opt.value) ? 'border-emerald-500 bg-emerald-500/10' : 'border-white/20 bg-white/5 hover:border-emerald-500'}`}
-                          >
-                            <span className="text-[9px] font-black">{opt.label}</span>
-                            <span className="text-[7px] font-bold opacity-60">{qrisConfigs.find(c => c.nominal === opt.value) ? 'TERPASANG' : 'UPLOAD'}</span>
-                          </label>
-                        </div>
-                      ))}
-                    </div>
+                          <span className="text-[7px] font-bold opacity-60 mt-2">Klik untuk ubah</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="text-[9px] font-black">UPLOAD QRIS UTAMA</span>
+                          <span className="text-[7px] font-bold opacity-60 mt-1">1 gambar untuk semua nominal</span>
+                        </>
+                      )}
+                    </label>
                   </div>
-
                   <div className="pt-6 border-t border-white/10 space-y-4">
                     <h5 className="text-[10px] font-black text-emerald-400 uppercase tracking-widest">Rekap User Terdaftar</h5>
                     <div className="max-h-64 overflow-y-auto space-y-2 pr-2 custom-scrollbar">
@@ -1062,7 +1076,7 @@ const ClientApp: React.FC<ClientAppProps> = ({ initialActivities, initialDonatio
         </div>
       )}
 
-      {/* SISA VIEW (FORM, DLL) TETAP ADA */}
+      { }
       {view === 'form' && (
         <div className="pt-32 pb-12 w-full flex flex-col items-center animate-in zoom-in-95 no-print">
           <DonationForm initialAmount={selectedAmount} initialData={donationData} currentUser={user} onCancel={() => setView('home')} onSubmit={details => { setDonationData({ ...details, date: '', id: '' }); setView('payment'); }} />
@@ -1082,7 +1096,10 @@ const ClientApp: React.FC<ClientAppProps> = ({ initialActivities, initialDonatio
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             <QRISCard
               amount={donationData.amount}
-              customImageUrl={qrisConfigs.find(c => c.nominal === donationData.amount)?.imageUrl}
+              customImageUrl={
+                qrisConfigs.find(c => c.nominal === donationData.amount)?.imageUrl ||
+                qrisConfigs.find(c => c.nominal === 0)?.imageUrl
+              }
             />
             <div className="bg-white p-10 rounded-[3.5rem] shadow-2xl border border-emerald-50 text-center space-y-8 flex flex-col justify-between relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-full -mr-16 -mt-16 opacity-50 blur-2xl" />

@@ -606,7 +606,7 @@ const ClientApp: React.FC<ClientAppProps> = ({ initialActivities, initialDonatio
               </div>
               <button type="submit" className="w-full py-5 rounded-2xl bg-slate-900 text-white font-black text-sm uppercase shadow-xl hover:bg-emerald-600 transition-all flex items-center justify-center gap-2">RESET PASSWORD <IconZap /></button>
               <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-100">
-                <p className="text-[9px] font-bold text-emerald-700 uppercase leading-relaxed">Hubungi Admin jika masih bermasalah: <br /> <span className="text-[11px] font-black">+62 812-3456-7890 (Admin Aziz)</span></p>
+                <p className="text-[9px] font-bold text-emerald-700 uppercase leading-relaxed">Hubungi Admin jika masih bermasalah: <br /> <span className="text-[11px] font-black">+62 878-2246-3210 (Admin Arsellya)</span></p>
               </div>
             </form>
           </div>

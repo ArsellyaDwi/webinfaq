@@ -484,6 +484,10 @@ const ClientApp: React.FC<ClientAppProps> = ({ initialActivities, initialDonatio
                   <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all"><IconInstagram size={20} /></div>
                   <p className="font-black text-[10px] uppercase tracking-widest">INFORMATIKA ITN</p>
                 </a>
+                <a href="https://wa.me/6287822463210" target="_blank" rel="noopener noreferrer" className="w-full flex items-center gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-emerald-50 hover:text-emerald-600 transition-all group">
+                  <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all"><IconInstagram size={20} /></div>
+                  <p className="font-black text-[10px] uppercase tracking-widest">WA ADMIN HATI</p>
+                </a>
               </div>
             </div>
 

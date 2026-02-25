@@ -64,6 +64,24 @@ export const IconInstagram = ({ size = 20, className, stroke }: IconProps) => (
   <BaseIcon size={size} className={className} stroke={stroke}><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></BaseIcon>
 );
 
+export const IconWhatsApp = ({ size = 20, className, stroke }: IconProps) => (
+  <BaseIcon size={size} className={className} stroke={stroke}>
+    {}
+    <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/>
+    
+    {}
+    <path d="M16.5 12.0c-.5-.5-1.5-1-2-.1-.2.3-.5.7-.7.8-.2.1-.4.1-.7 0s-1.2-.4-2.2-1.3c-.8-.8-1.3-1.8-1.5-2.1-.2-.3 0-.5.1-.7s.3-.3.4-.5c.1-.1.2-.3.2-.5s-.1-.8-.3-1.3c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.8.4s-1 1-1 2.4c0 1.4 1 2.8 1.1 3 0 0 2 3.2 4.9 4.4.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/>
+  </BaseIcon>
+);
+
+export const IconMapPinned = ({ size = 20, className, stroke }: IconProps) => (
+  <BaseIcon size={size} className={className} stroke={stroke}>
+    <path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0"/>
+    <circle cx="12" cy="8" r="2"/>
+    <path d="M8.714 14h-3.71a1 1 0 0 0-.948.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 .948-1.316l-2-6a1 1 0 0 0-.949-.684h-3.712"/>
+  </BaseIcon>
+);
+
 export const IconDownload = ({ size = 18, className, stroke }: IconProps) => (
   <BaseIcon size={size} className={className} stroke={stroke}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></BaseIcon>
 );

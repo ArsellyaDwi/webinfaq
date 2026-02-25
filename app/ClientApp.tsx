@@ -14,6 +14,8 @@ import {
   IconLogOut,
   IconShield,
   IconInstagram,
+  IconWhatsApp,
+  IconMapPinned,
   IconDownload,
   IconTrash,
   IconEdit,
@@ -474,6 +476,20 @@ const ClientApp: React.FC<ClientAppProps> = ({ initialActivities, initialDonatio
                 <p className="font-black text-xs uppercase tracking-widest">Semua Dokumentasi</p>
               </button>
 
+              <button
+                onClick={() => {
+                  setView('all_activities');
+                  setShowMenu(false);
+                  window.open('https://maps.app.goo.gl/cEZx9nQTnw9iopxw7', '_blank');
+                }}
+                className="w-full flex items-center gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-emerald-50 hover:text-emerald-600 transition-all group"
+              >
+                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                  <IconMapPinned size={20} />
+                </div>
+                <p className="font-black text-xs uppercase tracking-widest">Zona Takjil</p>
+              </button>
+
               <div className="pt-4 border-t border-slate-100 space-y-2">
                 <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest ml-4 mb-2">Social Media</p>
                 <a href="https://www.instagram.com/hati_itn_malang?igsh=dnF6NmM4ZGRtcnZy" target="_blank" rel="noopener noreferrer" className="w-full flex items-center gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-emerald-50 hover:text-emerald-600 transition-all group">
@@ -485,7 +501,7 @@ const ClientApp: React.FC<ClientAppProps> = ({ initialActivities, initialDonatio
                   <p className="font-black text-[10px] uppercase tracking-widest">INFORMATIKA ITN</p>
                 </a>
                 <a href="https://wa.me/6287822463210" target="_blank" rel="noopener noreferrer" className="w-full flex items-center gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-emerald-50 hover:text-emerald-600 transition-all group">
-                  <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all"><IconInstagram size={20} /></div>
+                  <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all"><IconWhatsApp size={20} /></div>
                   <p className="font-black text-[10px] uppercase tracking-widest">WA ADMIN HATI</p>
                 </a>
               </div>

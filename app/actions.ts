@@ -202,6 +202,13 @@ export async function getDonations() {
 }
 
 export async function saveDonation(donation: DonationDetail) {
+
+  const donationClosed = true; // true = donasi ditutup
+
+  if (donationClosed) {
+    return { error: "Donasi sudah ditutup. Terima kasih atas partisipasinya 🙏" };
+  }
+
   try {
     const id = donation.id || 'HATI-' + Math.random().toString(36).substr(2, 6).toUpperCase();
     const date = donation.date || new Date().toLocaleDateString('id-ID', {

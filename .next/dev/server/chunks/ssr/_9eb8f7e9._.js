@@ -282,37 +282,14 @@ async function getDonations() {
     }
 }
 async function saveDonation(donation) {
-    try {
-        const id = donation.id || 'HATI-' + Math.random().toString(36).substr(2, 6).toUpperCase();
-        const date = donation.date || new Date().toLocaleDateString('id-ID', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-        });
-        await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].donation.create({
-            data: {
-                id,
-                name: donation.name,
-                batch: donation.batch,
-                major: donation.major,
-                amount: donation.amount,
-                date,
-                proofImage: donation.proofImage,
-                username: donation.username
-            }
-        });
-        (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$cache$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["revalidatePath"])('/');
+    const donationClosed = true; // true = donasi ditutup
+    if ("TURBOPACK compile-time truthy", 1) {
         return {
-            success: true,
-            id,
-            date
-        };
-    } catch (error) {
-        console.error(error);
-        return {
-            error: "Failed to save donation"
+            error: "Donasi sudah ditutup. Terima kasih atas partisipasinya 🙏"
         };
     }
+    //TURBOPACK unreachable
+    ;
 }
 async function deleteDonation(id) {
     try {
